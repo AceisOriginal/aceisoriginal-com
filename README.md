@@ -15,7 +15,7 @@ Powder sky vibe matching Cloud Desk.
 Sky blush mint butter lavender. Nunito. Original clouds only.
 
 ## Router / GitHub Pages
-Uses `BrowserRouter` (clean URLs). The `gh-pages` deploy includes `404.html` (copy of `index.html`) so so GitHub Pages SPA deep links work. Vite `base` is `/` for the custom domain.
+Uses `BrowserRouter` (clean URLs). The `gh-pages` deploy includes `404.html` (copy of `index.html`) so GitHub Pages SPA deep links work. Vite `base` is `/` for the custom domain.
 
 ## Scripts
 - `npm install` — install dependencies
