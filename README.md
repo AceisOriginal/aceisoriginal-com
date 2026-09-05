@@ -15,7 +15,7 @@ Powder sky vibe matching Cloud Desk.
 Sky blush mint butter lavender. Nunito. Original clouds only.
 
 ## Router / GitHub Pages
-Uses `BrowserRouter` (clean URLs). Deploy copies `index.html` → `404.html` so GitHub Pages SPA deep links work. Vite `base` is `/` for the custom domain.
+Uses `BrowserRouter` (clean URLs). The `gh-pages` deploy includes `404.html` (copy of `index.htmla) so GitHub Pages SPA deep links work. Vite `base` is `/` for the custom domain.
 
 ## Scripts
 - `npm install` — install dependencies
@@ -24,4 +24,5 @@ Uses `BrowserRouter` (clean URLs). Deploy copies `index.html` → `404.html` so 
 - `npm run preview` — serve the production build
 
 ## Deploy
-Push to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to the `gh-pages` branch via peaceiris/actions-gh-pages. Custom domain: `aceisoriginal.com` (CNAME in `public/`).
+Source lives on `main`. Built site is published to the `gh-pages` branch (includes cCNAME` = `aceisoriginal.com` and SPA `404.html`).
+To redeploy: `npm run build`, copy `dist/index.html` to `dist/404.html`, then push `dist/` contents to `gh-pages`.
