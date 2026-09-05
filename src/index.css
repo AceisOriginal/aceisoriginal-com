@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+@theme {
+  /* Powder sky brand kit — colors and atmosphere only, original decor */
+  --color-cloud-50: #f2faff;
+  --color-cloud-100: #dcf3ff;
+  --color-cloud-200: #d5f1fe;
+  --color-cloud-300: #b9e6fc;
+  --color-cloud-400: #7cc7f4;
+  --color-cloud-500: #5bb8ef;
+  --color-cloud-600: #3a9fd9;
+  --color-cloud-700: #2b7faf;
+  --color-cloud-800: #246690;
+  --color-cloud-900: #1f5474;
+  --color-blush: #f7adcf;
+  --color-blush-soft: #fbd6e7;
+  --color-cream: #ffffff;
+  --color-lavender: #aeb9d8;
+  --color-mint: #96d6d3;
+  --color-butter: #fffab1;
+  --font-sans: "Nunito", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  /* Flat powder sky — banner atmosphere; clouds/rainbows live in CloudDecor */
+  background:
+    radial-gradient(ellipse 70% 50% at 85% 8%, rgba(251, 214, 231, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 40% at 12% 90%, rgba(174, 185, 216, 0.22) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 35% at 70% 100%, rgba(150, 214, 211, 0.18) 0%, transparent 45%),
+    linear-gradient(180deg, #DCF3FF 0%, #D5F1FE 45%, #E8F7FF 78%, #F7FCFF 100%);
+  color: #1f5474;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Soft cloud scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #dcf3ff;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #7cc7f4;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5bb8ef;
+}
+
+@keyframes float-cloud {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-8px) translateX(4px); }
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-float {
+  animation: float-cloud 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-cloud 9s ease-in-out infinite;
+}
+
+.cloud-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  border: 2px solid rgba(124, 199, 244, 0.55);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 40px rgba(124, 199, 244, 0.22), 0 4px 14px rgba(220, 243, 255, 0.8);
+}
+
+.pill-btn {
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(124, 199, 244, 0.4);
+}
+
+.pill-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(124, 199, 244, 0.5);
+}
+
+.pill-btn:active {
+  transform: translateY(0);
+}
+
+/* —— Cute dopamine upgrades —— */
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg) scale(0.6); opacity: 0; }
+}
+
+@keyframes sticker-bob {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-10px) rotate(6deg); }
+}
+
+@keyframes pop-scale {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes soft-sparkle {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes page-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.confetti-piece {
+  animation-name: confetti-fall;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-fill-mode: forwards;
+}
+
+.sticker-float {
+  animation: sticker-bob 5s ease-in-out infinite;
+}
+
+.pop-once {
+  animation: pop-scale 0.35s ease-out;
+}
+
+.bounce-in {
+  animation: bounce-in 0.4s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.28s ease-out;
+}
+
+.page-enter {
+  animation: page-fade 0.28s ease-out;
+}
+
+.sparkle-pulse {
+  animation: soft-sparkle 2.4s ease-in-out infinite;
+}
+
+@keyframes twinkle-star {
+  0%, 100% { opacity: 0.35; transform: scale(0.9) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(12deg); }
+}
+
+@keyframes drift-soft {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-6px) translateX(3px); }
+  66% { transform: translateY(-2px) translateX(-4px); }
+}
+
+.animate-twinkle {
+  animation: twinkle-star 2.8s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift-soft 11s ease-in-out infinite;
+}
+
+
+.bounce-tap:active {
+  transform: scale(0.94);
+}
+
+.pill-btn {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.pill-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.pill-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.sticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1.5px solid;
+  box-shadow: 0 2px 0 rgba(168, 216, 255, 0.45);
+  transform: rotate(-2deg);
+}
+
+.sticker-badge.saved {
+  background: #fbd6e7;
+  border-color: #f7adcf;
+  color: #9d174d;
+}
+
+.sticker-badge.posted {
+  background: #dcf3ff;
+  border-color: #7cc7f4;
+  color: #1f5474;
+  transform: rotate(2deg);
+}
+
+.sticker-badge.fresh {
+  background: #fffab1;
+  border-color: #96d6d3;
+  color: #1f5474;
+}
+
+.chip-filter {
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1.5px solid #b9e6fc;
+  background: white;
+  color: #0369a1;
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.chip-filter:hover {
+  transform: scale(1.05);
+  background: #dcf3ff;
+}
+
+.chip-filter.active {
+  background: #7cc7f4;
+  border-color: #7ec4f8;
+  color: #1e4a6b;
+  box-shadow: 0 4px 12px rgba(124, 199, 244, 0.5);
+  transform: scale(1.06);
+}
+
+.glow-streak {
+  background: linear-gradient(135deg, #dcf3ff 0%, #ffffff 40%, #fbd6e7 100%);
+  border: 2px solid #7cc7f4;
+  color: #1f5474;
+  box-shadow: 0 0 24px rgba(124, 199, 244, 0.45), 0 0 14px rgba(247, 173, 207, 0.3);
+}
+
+.empty-cute {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px dashed #7cc7f4;
+}
