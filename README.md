@@ -8,14 +8,14 @@ Powder sky vibe matching Cloud Desk.
 ## Pages
 - Home `/`
 - Posts `/posts`
-- Pages c/pages`
+- Pages `/pages`
 - Links `/links`
 
 ## Brand
 Sky blush mint butter lavender. Nunito. Original clouds only.
 
 ## Router / GitHub Pages
-Uses `BrowserRouter` (clean URLs). The `gh-pages` deploy includes `404.html` (copy of `index.htmla) so GitHub Pages SPA deep links work. Vite `base` is `/` for the custom domain.
+Uses `BrowserRouter` (clean URLs). The `gh-pages` deploy includes `404.html` (copy of `index.html`) so so GitHub Pages SPA deep links work. Vite `base` is `/` for the custom domain.
 
 ## Scripts
 - `npm install` — install dependencies
@@ -24,5 +24,5 @@ Uses `BrowserRouter` (clean URLs). The `gh-pages` deploy includes `404.html` (co
 - `npm run preview` — serve the production build
 
 ## Deploy
-Source lives on `main`. Built site is published to the `gh-pages` branch (includes cCNAME` = `aceisoriginal.com` and SPA `404.html`).
+Source lives on `main`. Built site is published to the `gh-pages` branch (includes `CNAME` = `aceisoriginal.com` and SPA `404.html`).
 To redeploy: `npm run build`, copy `dist/index.html` to `dist/404.html`, then push `dist/` contents to `gh-pages`.
